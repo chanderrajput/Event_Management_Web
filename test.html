@@ -2,659 +2,273 @@
 <html>
 
 <head>
-  <title>My Event</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src='https://kit.fontawesome.com/a076d05399.js'>
-    // for flidding window
-  
-      //      var slideIndex = 0;
-      // showSlides();
-  
-      // function showSlides() {
-      //   var i;
-      //   var slides = document.getElementsByClassName("mySlides");
-      //   var dots = document.getElementsByClassName("dot");
-      //   for (i = 0; i < slides.length; i++) {
-      //     slides[i].style.display = "none";  
-      //   }
-      //   slideIndex++;
-      //   if (slideIndex > slides.length) {slideIndex = 1}    
-      //   for (i = 0; i < dots.length; i++) {
-      //     dots[i].className = dots[i].className.replace(" active", "");
-      //   }
-      //   slides[slideIndex-1].style.display = "block";  
-      //   dots[slideIndex-1].className += " active";
-      //   setTimeout(showSlides, 2000); 
-      // }
-  
-      var modal = document.getElementById('id01');
-  
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
+    <title>My Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'>
+        var modal = document.getElementById('id01');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
-      }
-  
-      var modal = document.getElementById('id02');
-      window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
+
+        var modal = document.getElementById('id02');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         }
-      }
-  </script>
-  <style>
-    .mainF{
-
-      background-image: url('pic.png');
-      margin: auto;
-      margin-top: -20px;
-    }
-
-    input[type=text], input[type=password] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      opacity: 0.8;
-    }
-
-    .cancelbtn {
-      width: auto;
-      padding: 10px 18px;
-      background-color: #f44336;
-    }
-
-    .imgcontainer {
-      text-align: center;
-      margin: 24px 0 12px 0;
-      position: relative;
-    }
-
-    img.avatar {
-      width: 40%;
-      border-radius: 50%;
-    }
-
-    .container {
-      padding: 16px;
-    }
-
-    span.psw {
-      float: right;
-      padding-top: 16px;
-    }
-
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1; 
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%; 
-      overflow: auto;
-      background-color: rgb(0,0,0); 
-      background-color: rgba(0,0,0,0.4); 
-      padding-top: 60px;
-    }
-
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto;
-      border: 1px solid #888;
-      width: 80%;
-    }
-
-
-    .close {
-      position: absolute;
-      right: 25px;
-      top: 0;
-      color: #000;
-      font-size: 35px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: red;
-      cursor: pointer;
-    }
-
-    .animate {
-      -webkit-animation: animatezoom 0.6s;
-      animation: animatezoom 0.6s
-    }
-
-    @-webkit-keyframes animatezoom {
-      from {-webkit-transform: scale(0)} 
-      to {-webkit-transform: scale(1)}
-    }
-      
-    @keyframes animatezoom {
-      from {transform: scale(0)} 
-      to {transform: scale(1)}
-    } 
-
-    @media screen and (max-width: 300px) {
-      span.psw {
-        display: block;
-        float: none;
-      }
-      .cancelbtn {
-        width: 100%;
-      }
-    }
-
-    input[type=text], input[type=password] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #f1f1f1;
-    }
-
-
-    input[type=text]:focus, input[type=password]:focus {
-      background-color: #ddd;
-      outline: none;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
-    }
-
-    button:hover {
-      opacity:1;
-    }
-
-    .cancelbtn {
-      padding: 14px 20px;
-      background-color: #f44336;
-    }
-
-    .cancelbtn, .signupbtn {
-      float: left;
-      width: 50%;
-    }
-
-    .container {
-      padding: 16px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1; 
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%; 
-      overflow: auto;
-      background-color: #474e5d;
-      padding-top: 50px;
-    }
-
-
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto 15% auto; 
-      border: 1px solid #888;
-      width: 80%; 
-    }
-
-    hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
-    } 
- 
-    .close {
-      position: absolute;
-      right: 35px;
-      top: 15px;
-      font-size: 40px;
-      font-weight: bold;
-      color: #f1f1f1;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #f44336;
-      cursor: pointer;
-    }
-
-
-    .clearfix::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-
-    @media screen and (max-width: 300px) {
-      .cancelbtn, .signupbtn {
-        width: 100%;
-      }
-    } 
-  
-
-    .column {
-      float: left;
-      margin:100px;
-      margin-bottom: -50px; 
-    }
-
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-
-
-    .mySlides {display: none;}
-      img {vertical-align: middle;}
-    
-    .slideshow-container {
-      max-width: 1000px;
-      position: relative;
-      margin: auto;
-    }
-
-
-    /* Number text (1/3 etc) */
-    .numbertext {
-      color: #f2f2f2;
-      font-size: 12px;
-      padding: 8px 12px;
-      position: absolute;
-      top: 0;
-    }
-
-    /* The dots/bullets/indicators */
-    .dot {
-      height: 15px;
-      width: 15px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-    .active {
-      background-color: #717171;
-    }
-
-    /* Fading animation */
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-      .text {font-size: 11px}
-    }
-    .footerM{
-      background-color: grey;
-      width: auto;
-      margin-top:-30px;
-    }
-
-    .footerM td{
-      padding-left: 70px;
-      text-decoration:none; 
-      color: white;
-    }
-    .footerTR{
-      font-size: 25px;
-       font-weight:bold;
-       color: white;
-      
-    }
-
-    .trIN a{
-      text-decoration:none; 
-      color: white;
-    }
-
-
-    .pA1 a{
-      margin-right: 20px;
-      text-decoration:none; 
-      color: white;
-    }
-    .column a{
-      text-decoration: none;
-      color: black;
-    }
-
-    .divYe{
-      background-image: url('p10.png');
-      background-repeat: no-repeat;
-      /*height: 700px;*/
-      width:100% ;
-      /*padding-top: 500px;*/
-    }
-
-    .divGrey{    
-      background-image: url('p20.png');
-      width: 100%;
-    
-    }
-  </style>
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <footer style="margin: auto;background-color: black;padding-bottom:-10px;color: white;text-align: right;">  <a id="link"><i class="fa fa-envelope" style="font-size:15px"></i></a>&nbsp; customercare@traveltriangle.com &nbsp;&nbsp; <a id="link"><i class="fa fa-phone" style="font-size:15px"></i></a>&nbsp; 111-222-333</footer>
-  <!-- //Here is the sliding window code but it have lots of error. -->
-  <!-- <div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-        <img src="img_nature_wide.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="img_snow_wide.jpg" style="width:100%">
-      <div class="text">Caption Two</div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="img_mountains_wide.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
-    </div>
-
-  </div>
-  <br>
-
-  <div style="text-align:center">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-  </div>
- -->
-  <div class="mainF">
-    <div>
-      <h2 style="color: yellow;padding: 20px;font-style: oblique;">Event Management</h2>
-      <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;float: right;margin-left: 10px;margin-bottom: 20px;">Login</button>
-      <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;float: right; ">Sign Up</button>
-      <h1 style="color: white;font-size: 40px;text-align: center;">Give Your Events a Royal look</h1>
-    </div>
-    <div id="id01" class="modal">
-      <form class="modal-content animate" action="/action_page.php" method="post">
-        <div class="imgcontainer">  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-        </div>
-        <div class="container">
-          <label for="uname"><b>Username</b>
-          </label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-          <label for="psw"><b>Password</b>
-          </label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          <button type="submit">Login</button>
-          <label>
-            <input type="checkbox" checked="checked" name="remember">Remember me</label>
-        </div>
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
-    </div>
-    <div id="id02" class="modal"> <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <form class="modal-content" action="/action_page.php">
-        <div class="container">
-          <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
-          <hr>
-          <label for="email"><b>Email</b>
-          </label>
-          <input type="text" placeholder="Enter Email" name="email" required>
-          <label for="psw"><b>Password</b>
-          </label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-          <label for="psw-repeat"><b>Repeat Password</b>
-          </label>
-          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Remember me</label>
-          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-          <div class="clearfix">
-            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-            <button type="submit" class="signupbtn">Sign Up</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    <button style="width: auto;background-color: rgb(56,56,56); margin-left: 37%;border-radius:9%; padding:20px;">See How Its Work</button>
-    <div> <i style="position: absolute;margin-left: 25%; padding-top: 0.9%;" class="fa fa-map-marker icon"></i> 
-      <input style="width: 165px; border: 1px solid #000; padding: 5px;margin-left: 25%;text-align: center;" type="text" id="contact" />  <i style="position: absolute; margin-left: 0.3%;padding-top: 0.9%;" class="fa fa-briefcase"></i> 
-      <input style="width: 165px; border: 1px solid #000; padding: 5px;text-align: center;" type="text" id="contact" />
-      <button style="width: 165px; padding: 5px; background-color: #CCFF00;font-size:14px; " type="submit" class="search">Search</button>
-    </div>
-  </div>
-  <div id="services">
-    <h1 style="text-align: center; font-style: bold;font-size: 50px;">Our Best Services For You</h1>
-    <div class="row" style="margin-top: -130px;">
-      <div class="column">
-        <img src="p1.png" style="width:90%">
-        <h2 style="margin-bottom: -12px;margin-top: -20px;"><a href="">PARTY HALL</a> </h2>
-        <p>35 events| 15 Services Provides</p>
-      </div>
-      <div class="column">
-        <img src="p2.png" style="width:90%">
-        <h2 style="margin-bottom: -12px;margin-top: -15px;margin-left:20px; "><a href="">SALOONS</a></h2>
-        <p style="margin-left:20px;">35 events| 15 Services Provides</p>
-      </div>
-      <div class="column">
-        <img src="p3.png" style="width:90%">
-        <h2 style="margin-bottom: -12px;margin-top: -20px;"><a href="">CATERING SERVVICES</a> </h2>
-        <p>35 events| 15 Services Provides</p>
-      </div>
-    </div>
-
-    <div class="divYe">
-      <table style="padding-bottom: 60px;">
-        <h1 style="padding-left: 350px;padding-top: 100px; margin-bottom:-10px;">How Book Service?</h1>
-        <tr style="padding-bottom: -150px;">
-          <td style="padding-left: 150px;padding-top: -100px; font-size: 30px;">
-            <h1><a href="#" class="fa fa-search"></a></h1>
-          </td>
-          <td style="padding-left: 60px; font-size: 30px;">
-            <h1><a href="#" class="fa fa-dollar"></a></h1>
-          </td>
-          <td style="padding-left: 60px; font-size: 30px;">
-            <h1><a href="#" class="fas fa-share-square"></a></h1>
-          </td>
-          <td style="padding-left: 60px;">
-            <h1 style="margin-top: -130px;">Watch Video</h1>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-left: 150px;padding-top:-100px;margin-bottom:-50; ">
-            <h2 style="margin-top: -55px;">Search Service</h2>
-          </td>
-          <td style="padding-left: 60px;">
-            <h2 style="margin-top: -55px;">Request Quote</h2>
-          </td>
-          <td style="padding-left: 60px;">
-            <h2 style="margin-top: -55px;">Book Service</h2>
-          </td>
-          <td style="padding-left: 60px;">
-            <img src="p12.png" height="120" width="170" style="margin-top: -220px;">
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-left: 150px;">
-            <p style="margin-top: -40px;">research,review,short lisk and
-              <br>share the best Banquet halls
-              <br>Party Halls newr you</p>
-          </td>
-          <td style="padding-left: 60px;">
-            <p style="margin-top: -40px;">Get multiple competing free
-              <br>quotes from Banquet Hall and
-              <br>Party Halls newr you</p>
-          </td>
-          <td style="padding-left: 60px;">
-            <p style="margin-top: -40px;">Select a quote that best fits your
-              <br>needs and book or reserve a
-              <br>Banquet of your choice</p>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-
-    <div class="divGrey">
-      <table style="margin-top: -70px; text-align: center;margin-bottom: -100px;">
-        <tr>
-          <td>
-            <h1 style="padding-left: 170px; padding-top: 70px; font-size: 70px;"><a href="#" class="fa fa-users" style="color: black;"> </a></h1>
-          </td>
-          <td>
-            <h1 style="padding-left: 150px; padding-top: 70px; font-size: 70px;"><i class='fas fa-user-tie'></i></h1>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-left: 170px;">
-            <h2 style="margin-top: -40px;">For Customers</h2>
-          </td>
-          <td style="padding-left: 150px;">
-            <h2 style="margin-top: -40px;">For Venue Owners</h2>
-          </td>
-        </tr>
-        <tr>
-          <td style="padding-left: 170px;padding-bottom:145px;">
-            <P style="margin-top: -20px;">Search best banquet hall and part hall, near you
-              <br>review amenties, compare prices,checkavaibality,
-              <br>and get multiple frame quotes. Or simply tell us your
-              <br>needs by fillingnin the inquary form and we will take
-              <br>care of the rest.
-              <br>
-              <br>Events Mangements is consantly adding new vanues
-              <br>with great amount of details in all top locations of
-              <br>major cities in india. Customers save the ability to
-              <br>search the vanue based on their specification needs and
-              <br>the accasions. We are listing banwuets hall, party halls
-              <br>and vanue that have the.</P>
-          </td>
-          <td style="padding-left: 150px; padding-bottom: 265px;">
-            <p style="margin-top: -20px;">Our single goal is to increase your accupancy. Bfing
-              <br>you more customers from a wide vairnty of new
-              <br>channels. We will relentlessly promise your proper-
-              <br>ties to expand your visibilty across multiple new and
-              <br>existing channels.</p>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-
-    <footer class="footerM" style="height: 220px;width: 100%;">
-      <table style="float: left; position: relative;margin-top: 20px;">
-        <tr class="footerTR">
-          <td>Our Story</td>
-          <td>Get Inspired</td>
-          <td>Policies</td>
-          <td>More</td>
-        </tr>
-        <tr class="trIN">
-          <td><a href=""> About us</a>
-          </td>
-          <td><a href=""> Testimonail</a>
-          </td>
-          <td><a href="">Term and Conditions</a> 
-          </td>
-          <td><a href=""> FAQS</a>
-          </td>
-        </tr>
-        <tr class="trIN">
-          <td><a href="">Team</a>
-          </td>
-          <td><a href=""> Bolg</a>
-          </td>
-          <td><a href=""> Privacy Policy</a>
-          </td>
-          <td><a href=""> Contact Us</a>
-          </td>
-        </tr>
-        <tr class="trIN">
-          <td></td>
-          <td></td>
-          <td><a href="">Cancellation</a> 
-          </td>
-        </tr>
-      </table>
-
-      <table style="float: right;position: relative; text-align: center; margin-bottom: ">
-        <tr>
-          <td style=" font-size: 25px; font-weight:bold;">Karachi Office</td>
-        </tr>
-        <tr>
-          <td>Al-Bakhra House 162, Bangalore Town,Main Shara e faisal, Karachi, Pakistan</td>
-        </tr>
-        <tr>
-          <td>PABX: +92.(21).3431.5851</td>
-        </tr>
-        <tr>
-          <td>Fax:+92.(21).3454.6465</td>
-        </tr>
-        <tr>
-          <td>Email: info@albaraka.com.pk</td>
-        </tr>
-      </table>
-      <br>
-      <br>
-      <p style="margin-left: 50px; padding-left: 200px;padding-top: 90px;color: white;" class="pA1">Connect with us in:
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-instagram"></a>
-        <a href="#" class="fa fa-google"></a> <a href="#" class="fa fa-phone" style="margin-left: 300px;">111-222-333</a>
-        <a href="#" class="fa fa-envelope" style="margin-left:20px; ">customercare@eventmanagement.com.pk</a>
-      </p>
-      <p style="text-align: center; color: white;">All rights reserved <em>&copy;</em> 2017</p>
+    <footer style="margin: auto;background-color: black;padding-bottom:-10px;color: white;text-align: right;">
+        <a id="link"><i class="fa fa-envelope" style="font-size:15px"></i></a>&nbsp; customercare@traveltriangle.com &nbsp;&nbsp; <a id="link"><i class="fa fa-phone" style="font-size:15px"></i></a>&nbsp; 111-222-333
     </footer>
+    <div class="mainF">
+        <div>
+            <h2 style="color: yellow;padding: 20px;font-style: oblique;">Event Management</h2>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;float: right;margin-left: 10px;margin-bottom: 20px;">Login</button>
+            <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;float: right;">Sign Up</button>
+            <h1 style="color: white;font-size: 40px;text-align: center;">Give Your Events a Royal look</h1>
+        </div>
+        <div id="id01" class="modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer"> <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                </div>
+                <div class="container">
+                    <label for="uname"><b>Username</b>
+          </label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <label for="psw"><b>Password</b>
+          </label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <button type="submit">Login</button>
+                    <label>
+            <input type="checkbox" checked="checked" name="remember">Remember me</label>
+                </div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+
+        <div id="id02" class="modal"> <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" action="/action_page.php">
+                <div class="container">
+                    <h1>Sign Up</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                    <label for="email"><b>Email</b>
+          </label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <label for="psw"><b>Password</b>
+          </label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <label for="psw-repeat"><b>Repeat Password</b>
+          </label>
+                    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                    <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">Remember me</label>
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                    <div class="clearfix">
+                        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button type="submit" class="signupbtn">Sign Up</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button style="width: auto;background-color: rgb(56,56,56); margin-left: 37%;border-radius:9%; padding:20px;">See How Its Work</button>
+        <div> <i style="position: absolute;margin-left: 25%; padding-top: 0.9%;" class="fa fa-map-marker icon"></i>
+            <input style="width: 165px; border: 1px solid #000; padding: 5px;margin-left: 25%;text-align: center;" type="text" id="contact" /> <i style="position: absolute; margin-left: 0.3%;padding-top: 0.9%;" class="fa fa-briefcase"></i>
+            <input style="width: 165px; border: 1px solid #000; padding: 5px;text-align: center;" type="text" id="contact" />
+            <button style="width: 165px; padding: 5px; background-color: #CCFF00;font-size:14px; " type="submit" class="search">Search</button>
+        </div>
+    </div>
+    <div id="services">
+        <h1 style="text-align: center; font-style: bold;font-size: 50px;">Our Best Services For You</h1>
+        <div class="row">
+            <div class="column">
+                <img src="p1.png" style="width:90%">
+                <h2 style="margin-bottom: -12px;"><a href="">PARTY HALL</a> </h2>
+                <p>35 events| 15 Services Provides</p>
+            </div>
+            <div class="column">
+                <img src="p2.png" style="width:90%">
+                <h2 style="margin-bottom: -12px;"><a href="">SALOONS</a></h2>
+                <p>35 events| 15 Services Provides</p>
+            </div>
+            <div class="column">
+                <img src="p3.png" style="width:90%">
+                <h2 style="margin-bottom: -12px;"><a href="">CATERING SERVVICES</a> </h2>
+                <p>35 events| 15 Services Provides</p>
+            </div>
+        </div>
+        <div class="divYe">
+            <table style="padding-bottom: 60px;">
+                <h1 style="padding-left: 350px;padding-top: 100px; margin-bottom:-10px;">How Book Service?</h1>
+                <tr style="padding-bottom: -100px;">
+                    <td style="padding-left: 150px;padding-top: -100px; font-size: 30px;">
+                        <h1>
+                            <a href="#" class="fa fa-search"></a>
+                        </h1>
+                    </td>
+                    <td style="padding-left: 60px; font-size: 30px;">
+                        <h1>
+                            <a href="#" class="fa fa-dollar"></a>
+                        </h1>
+                    </td>
+                    <td style="padding-left: 60px; font-size: 30px;">
+                        <h1>
+                            <a href="#" class="fas fa-share-square"></a>
+                        </h1>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <h1>Watch Video</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 150px;padding-top:-100px;">
+                        <h2>Search Service</h2>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <h2>Request Quote</h2>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <h2>Book Service</h2>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <img src="p12.png" height="120" width="170">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 150px;">
+                        <p>research,review,short lisk and
+                            <br>share the best Banquet halls
+                            <br>Party Halls newr you</p>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <p>Get multiple competing free
+                            <br>quotes from Banquet Hall and
+                            <br>Party Halls newr you</p>
+                    </td>
+                    <td style="padding-left: 60px;">
+                        <p>Select a quote that best fits your
+                            <br>needs and book or reserve a
+                            <br>Banquet of your choice</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="divGrey">
+            <table style="margin-top: -70px; text-align: center;margin-bottom: -100px;">
+                <tr>
+                    <td>
+                        <h1 style="padding-left: 170px; padding-top: 70px; font-size: 70px;">
+                            <a href="#" class="fa fa-users" style="color: black;"> </a>
+                        </h1>
+                    </td>
+                    <td>
+                        <h1 style="padding-left: 150px; padding-top: 70px; font-size: 70px;"><i class='fas fa-user-tie'></i></h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 170px;">
+                        <h2 style="margin-top: -40px;">For Customers</h2>
+                    </td>
+                    <td style="padding-left: 150px;">
+                        <h2 style="margin-top: -40px;">For Venue Owners</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left: 170px;padding-bottom:145px;">
+                        <P style="margin-top: -20px;">Search best banquet hall and part hall, near you
+                            <br>review amenties, compare prices,checkavaibality,
+                            <br>and get multiple frame quotes. Or simply tell us your
+                            <br>needs by fillingnin the inquary form and we will take
+                            <br>care of the rest.
+                            <br>
+                            <br>Events Mangements is consantly adding new vanues
+                            <br>with great amount of details in all top locations of
+                            <br>major cities in india. Customers save the ability to
+                            <br>search the vanue based on their specification needs and
+                            <br>the accasions. We are listing banwuets hall, party halls
+                            <br>and vanue that have the.</P>
+                    </td>
+                    <td style="padding-left: 150px; padding-bottom: 265px;">
+                        <p style="margin-top: -20px;">Our single goal is to increase your accupancy. Bfing
+                            <br>you more customers from a wide vairnty of new
+                            <br>channels. We will relentlessly promise your proper-
+                            <br>ties to expand your visibilty across multiple new and
+                            <br>existing channels.</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <footer class="footerM" style="height: 220px;width: 100%;">
+            <table style="float: left; position: relative;margin-top: 20px;">
+                <tr class="footerTR">
+                    <td>Our Story</td>
+                    <td>Get Inspired</td>
+                    <td>Policies</td>
+                    <td>More</td>
+                </tr>
+                <tr class="trIN">
+                    <td><a href=""> About us</a>
+                    </td>
+                    <td><a href=""> Testimonail</a>
+                    </td>
+                    <td><a href="">Term and Conditions</a>
+                    </td>
+                    <td><a href=""> FAQS</a>
+                    </td>
+                </tr>
+                <tr class="trIN">
+                    <td><a href="">Team</a>
+                    </td>
+                    <td><a href=""> Bolg</a>
+                    </td>
+                    <td><a href=""> Privacy Policy</a>
+                    </td>
+                    <td><a href=""> Contact Us</a>
+                    </td>
+                </tr>
+                <tr class="trIN">
+                    <td></td>
+                    <td></td>
+                    <td><a href="">Cancellation</a>
+                    </td>
+                </tr>
+            </table>
+            <table style="float: right;position: relative; text-align: center; margin-bottom: ">
+                <tr>
+                    <td style=" font-size: 25px; font-weight:bold;">Karachi Office</td>
+                </tr>
+                <tr>
+                    <td>Al-Bakhra House 162, Bangalore Town,Main Shara e faisal, Karachi, Pakistan</td>
+                </tr>
+                <tr>
+                    <td>PABX: +92.(21).3431.5851</td>
+                </tr>
+                <tr>
+                    <td>Fax:+92.(21).3454.6465</td>
+                </tr>
+                <tr>
+                    <td>Email: info@albaraka.com.pk</td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <p style="margin-left: 50px; padding-left: 200px;padding-top: 90px;color: white;" class="pA1">Connect with us in:
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-google"></a> <a href="#" class="fa fa-phone" style="margin-left: 300px;">111-222-333</a>
+                <a href="#" class="fa fa-envelope" style="margin-left:20px; ">customercare@eventmanagement.com.pk</a>
+            </p>
+            <p style="text-align: center; color: white;">All rights reserved <em>&copy;</em> 2017</p>
+        </footer>
 </body>
 
 </html>
